@@ -54,9 +54,9 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'multi.cbslfqmcautq.us-east-1.rds.amazonaws.com',
+			'host'      => 'localhost',
 			'database'  => 'sximo',
-			'username'  => 'admin',
+			'username'  => 'root',
 			'password'  => 'silverston',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
