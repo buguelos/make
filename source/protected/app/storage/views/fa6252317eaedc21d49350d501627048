@@ -1,0 +1,195 @@
+
+  <div class="page-content row">
+    <!-- Page header -->
+    <div class="page-header">
+      <div class="page-title">
+        <h3> <?php echo $pageTitle; ?> <small><?php echo $pageNote; ?></small></h3>
+      </div>
+      <ul class="breadcrumb">
+        <li><a href="<?php echo URL::to('dashboard'); ?>"><?php echo Lang::get('core.home'); ?></a></li>
+		<li><a href="<?php echo URL::to('larawhatsapi?md='.$filtermd); ?>"><?php echo $pageTitle; ?></a></li>
+        <li class="active"><?php echo Lang::get('core.addedit'); ?> </li>
+      </ul>
+	  	  
+    </div>
+ 
+ 	<div class="page-content-wrapper">
+
+		<ul class="parsley-error-list">
+			<?php foreach($errors->all() as $error): ?>
+				<li><?php echo $error; ?></li>
+			<?php endforeach; ?>
+		</ul>
+<div class="sbox animated fadeInRight">
+	<div class="sbox-title"> <h4> <i class="fa fa-table"></i> <?php echo $pageTitle ;?> <small><?php echo $pageNote; ?></small></h4></div>
+	<div class="sbox-content"> 	
+
+		 <?php echo Form::open(array('url'=>'larawhatsapi/save/'.SiteHelpers::encryptID($row['menu_id']).'?md='.$filtermd.$trackUri, 'class'=>'form-horizontal','files' => true , 'parsley-validate'=>'','novalidate'=>' ')); ?>
+
+<div class="col-md-12">
+						<fieldset><legend> Whatsapp</legend>
+									
+								  <div class="form-group  " >
+									<label for="Menu Id" class=" control-label col-md-4 text-left"> Menu Id </label>
+									<div class="col-md-6">
+									  <?php echo Form::text('menu_id', $row['menu_id'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " >
+									<label for="Parent Id" class=" control-label col-md-4 text-left"> Parent Id </label>
+									<div class="col-md-6">
+									  <?php echo Form::text('parent_id', $row['parent_id'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " >
+									<label for="Module" class=" control-label col-md-4 text-left"> Module </label>
+									<div class="col-md-6">
+									  <?php echo Form::text('module', $row['module'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " >
+									<label for="Url" class=" control-label col-md-4 text-left"> Url </label>
+									<div class="col-md-6">
+									  <?php echo Form::text('url', $row['url'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " >
+									<label for="Menu Name" class=" control-label col-md-4 text-left"> Menu Name </label>
+									<div class="col-md-6">
+									  <?php echo Form::text('menu_name', $row['menu_name'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " >
+									<label for="Menu Type" class=" control-label col-md-4 text-left"> Menu Type </label>
+									<div class="col-md-6">
+									  <?php echo Form::text('menu_type', $row['menu_type'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " >
+									<label for="Role Id" class=" control-label col-md-4 text-left"> Role Id </label>
+									<div class="col-md-6">
+									  <?php echo Form::text('role_id', $row['role_id'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " >
+									<label for="Deep" class=" control-label col-md-4 text-left"> Deep </label>
+									<div class="col-md-6">
+									  <?php echo Form::text('deep', $row['deep'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " >
+									<label for="Ordering" class=" control-label col-md-4 text-left"> Ordering </label>
+									<div class="col-md-6">
+									  <?php echo Form::text('ordering', $row['ordering'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " >
+									<label for="Position" class=" control-label col-md-4 text-left"> Position </label>
+									<div class="col-md-6">
+									  <?php echo Form::text('position', $row['position'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " >
+									<label for="Menu Icons" class=" control-label col-md-4 text-left"> Menu Icons </label>
+									<div class="col-md-6">
+									  <?php echo Form::text('menu_icons', $row['menu_icons'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " >
+									<label for="Active" class=" control-label col-md-4 text-left"> Active </label>
+									<div class="col-md-6">
+									  <?php echo Form::text('active', $row['active'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " >
+									<label for="Access Data" class=" control-label col-md-4 text-left"> Access Data </label>
+									<div class="col-md-6">
+									  <textarea name='access_data' rows='2' id='access_data' class='form-control '  
+				           ><?php echo $row['access_data']; ?></textarea> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " >
+									<label for="Allow Guest" class=" control-label col-md-4 text-left"> Allow Guest </label>
+									<div class="col-md-6">
+									  <?php echo Form::text('allow_guest', $row['allow_guest'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " >
+									<label for="Menu Lang" class=" control-label col-md-4 text-left"> Menu Lang </label>
+									<div class="col-md-6">
+									  <textarea name='menu_lang' rows='2' id='menu_lang' class='form-control '  
+				           ><?php echo $row['menu_lang']; ?></textarea> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> </fieldset>
+			</div>
+			
+			
+			<div style="clear:both"></div>	
+				
+					
+				  <div class="form-group">
+					<label class="col-sm-4 text-right">&nbsp;</label>
+					<div class="col-sm-8">	
+					<button type="submit" name="apply" class="btn btn-info btn-sm" ><i class="fa  fa-check-circle"></i> <?php echo Lang::get('core.sb_apply'); ?></button>
+					<button type="submit" name="submit" class="btn btn-primary btn-sm" ><i class="fa  fa-save "></i> <?php echo Lang::get('core.sb_save'); ?></button>
+					<button type="button" onclick="location.href='<?php echo URL::to('larawhatsapi?md='.$masterdetail["filtermd"].$trackUri); ?>' " class="btn btn-success btn-sm "><i class="fa  fa-arrow-circle-left "></i>  <?php echo Lang::get('core.sb_cancel'); ?> </button>
+					</div>	  
+			
+				  </div> 
+		 
+		 <?php echo Form::close(); ?>
+
+	</div>
+</div>		 
+</div>	
+</div>			 
+   <script type="text/javascript">
+	$(document).ready(function() { 
+		 
+	});
+	</script>		 

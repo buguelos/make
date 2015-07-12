@@ -1,0 +1,75 @@
+<?php /**/ usort($tableGrid, "SiteHelpers::_sort") /**/ ?>
+  <div class="page-content row">
+    <!-- Page header -->
+    <div class="page-header">
+      <div class="page-title">
+        <h3> <?php echo $pageTitle; ?> <small><?php echo $pageNote; ?></small></h3>
+      </div>
+      <ul class="breadcrumb">
+        <li><a href="<?php echo URL::to('dashboard'); ?>"><?php echo Lang::get('core.home'); ?></a></li>
+        <li class="active"><?php echo $pageTitle; ?></li>
+      </ul>
+	</div>  
+	
+	<div class="page-content-wrapper">
+		<div class="toolbar-line ">	
+				<?php if($access['is_excel'] ==1): ?>
+				<a href="<?php echo URL::to('contatos/download'); ?>" class="tips btn btn-xs btn-default" title="<?php echo Lang::get('core.btn_download'); ?>">
+				<i class="icon-folder-download2"></i>&nbsp;<?php echo Lang::get('core.btn_download'); ?> </a>
+				<?php endif; ?>		
+				<?php if(Session::get('gid') ==1): ?>
+				<a href="<?php echo URL::to('module/config/contatos'); ?>" class="tips btn btn-xs btn-default"  title="<?php echo Lang::get('core.btn_config'); ?>">
+				<i class="icon-cog"></i>&nbsp;<?php echo Lang::get('core.btn_config'); ?> </a>	
+				<?php endif; ?>  			
+		 
+		</div> 	
+		
+	
+<div class="sbox animated fadeInRight">
+	<div class="sbox-title"> <h4> <i class="fa fa-table"></i> <?php echo $pageTitle ;?> <small><?php echo $pageNote; ?></small></h4></div>
+	<div class="sbox-content"> 	
+
+	<div class="table-responsive">
+	 <?php echo Form::open(array('url'=>'contatos/destroy/', 'class'=>'form-horizontal' ,'ID' =>'SximoTable' )); ?>
+
+    <table class="table table-striped ">
+        <thead>
+		<tr>
+			<th> No </th>
+		 <?php foreach($tableGrid as $t): ?>
+		 	<?php if($t['view'] =='1'): ?>
+			 <th><?php echo $t['label']; ?></th>
+			 <?php endif; ?>
+		  <?php endforeach; ?>
+           </tr>
+        </thead>
+
+        <tbody>
+            <?php foreach($rowData as $row): ?>
+                <tr>
+					<td width="50"> <?php echo ++$i; ?> </td>
+				 <?php foreach($tableGrid as $field): ?>
+					 <?php if($field['view'] =='1'): ?>
+					 <td>					 
+					 	<?php if($field['attribute']['image']['active'] =='1'): ?>
+							<img src="<?php echo asset($field['attribute']['image']['path'].'/'.$row->$field['field']); ?>" width="50" />
+						<?php else: ?>	
+							<?php echo $row->$field['field']; ?>	
+						<?php endif; ?>						 
+					 </td>
+					 <?php endif; ?>					 
+				 <?php endforeach; ?>
+                </tr>
+            <?php endforeach; ?>
+              
+        </tbody>
+      
+    </table>
+	<?php echo Form::close(); ?>
+
+	</div>
+	<?php echo $__env->make('footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	</div>
+</div>
+
+</div>	  
